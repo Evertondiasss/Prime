@@ -1,0 +1,325 @@
+:root {
+    --primary-color: #0091d3;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --text-color: #ffffff;
+    --hover-color: #007bb3;
+    --background-light: rgba(255, 255, 255, 0.05);
+    --shape-color-1: #4169E1;
+    --shape-color-2: #1E90FF;
+    --shape-color-3: #00BFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #cbceda 0%, #00BFFF 100%);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Formas decorativas */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    z-index: -1;
+}
+
+/* Círculos grandes */
+body::before {
+    width: 600px;
+    height: 600px;
+    background: var(--shape-color-1);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    opacity: 0.3;
+}
+
+body::after {
+    width: 400px;
+    height: 400px;
+    background: var(--shape-color-2);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -100px;
+    opacity: 0.2;
+}
+
+/* Formas adicionais */
+.decoration {
+    position: fixed;
+    z-index: -1;
+}
+
+.shape-1 {
+    width: 100px;
+    height: 100px;
+    background: var(--shape-color-3);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: 15%;
+    left: 15%;
+    opacity: 0.15;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    background: var(--shape-color-1);
+    border-radius: 50%;
+    bottom: 15%;
+    right: 15%;
+    opacity: 0.1;
+    animation: float 10s ease-in-out infinite;
+}
+
+.shape-3 {
+    width: 80px;
+    height: 80px;
+    background: var(--shape-color-2);
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    top: 50%;
+    left: 5%;
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-4 {
+    width: 120px;
+    height: 120px;
+    background: var(--shape-color-3);
+    border-radius: 41% 59% 48% 52% / 48% 56% 44% 52%;
+    top: 20%;
+    right: 10%;
+    opacity: 0.15;
+    animation: float 7s ease-in-out infinite;
+}
+
+/* Pontos decorativos */
+.dots {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, var(--shape-color-1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    background: var(--primary-color);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 
+        12px 12px 24px var(--shadow-color),
+        -12px -12px 24px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 145, 211, 0.8);
+}
+
+/* Header Styles */
+.header {
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--background-light);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-welcome {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.user-welcome h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.user-welcome h1 span {
+    font-weight: 500;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.welcome-text {
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.9;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* Menu Options */
+.menu-options {
+    padding: 20px 0;
+}
+
+.menu-options h2 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    color: var(--text-color);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.option-card {
+    background: var(--background-light);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 
+        6px 6px 12px var(--shadow-color),
+        -6px -6px 12px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+}
+
+.option-card i {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.option-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.option-card p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    background: var(--background-light);
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 40px;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+.bottom-nav .nav-item i {
+    font-size: 1.2rem;
+}
+
+.bottom-nav .nav-item span {
+    font-size: 0.8rem;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .options-grid {
+        gap: 10px;
+    }
+
+    .option-card {
+        padding: 15px;
+    }
+
+    .option-card i {
+        font-size: 1.5rem;
+    }
+} 
